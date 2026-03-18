@@ -562,8 +562,8 @@ async function submitSelection() {
       return;
     }
     await fetch(GOOGLE_SCRIPT_URL, {
-      method: 'POST', mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
+      method: 'POST',
+      mode: 'no-cors',
       body: JSON.stringify({ hospital: selectedHospital, name: selectedName, role: selectedRole, slots: sortedSlots })
     });
     showSuccessScreen(sortedSlots);
