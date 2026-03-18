@@ -24,8 +24,6 @@
     --gray-600: #5a6270;
     --gray-800: #2d3340;
     --white: #ffffff;
-    --shadow-sm: 0 1px 3px rgba(15,43,76,0.06);
-    --shadow-md: 0 4px 16px rgba(15,43,76,0.08);
     --shadow-lg: 0 8px 32px rgba(15,43,76,0.12);
     --radius: 10px;
   }
@@ -41,12 +39,8 @@
     line-height: 1.6;
   }
 
-  .page {
-    max-width: 1080px;
-    margin: 0 auto;
-  }
+  .page { max-width: 1080px; margin: 0 auto; }
 
-  /* Header */
   .header {
     background: var(--navy);
     color: var(--white);
@@ -55,29 +49,22 @@
     position: relative;
     overflow: hidden;
   }
-
   .header::before {
     content: '';
     position: absolute;
-    top: -60px;
-    right: -40px;
-    width: 200px;
-    height: 200px;
+    top: -60px; right: -40px;
+    width: 200px; height: 200px;
     background: rgba(26,109,212,0.15);
     border-radius: 50%;
   }
-
   .header::after {
     content: '';
     position: absolute;
-    bottom: -30px;
-    right: 80px;
-    width: 100px;
-    height: 100px;
+    bottom: -30px; right: 80px;
+    width: 100px; height: 100px;
     background: rgba(13,155,106,0.12);
     border-radius: 50%;
   }
-
   .header-badge {
     display: inline-block;
     background: rgba(255,255,255,0.12);
@@ -88,379 +75,153 @@
     font-weight: 500;
     letter-spacing: 0.5px;
     margin-bottom: 14px;
-    backdrop-filter: blur(4px);
   }
+  .header h1 { font-size: 23px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 6px; position: relative; }
+  .header-sub { font-size: 14px; opacity: 0.7; font-weight: 300; }
 
-  .header h1 {
-    font-size: 23px;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    margin-bottom: 6px;
-    position: relative;
-  }
-
-  .header-sub {
-    font-size: 14px;
-    opacity: 0.7;
-    font-weight: 300;
-  }
-
-  /* Card */
   .card {
     background: var(--white);
     border-radius: 0 0 14px 14px;
     box-shadow: var(--shadow-lg);
   }
 
-  /* Steps */
-  .step-section {
-    padding: 28px 40px;
-    border-bottom: 1px solid var(--gray-200);
-  }
-
-  .step-section:last-child {
-    border-bottom: none;
-  }
-
+  .step-section { padding: 28px 40px; border-bottom: 1px solid var(--gray-200); }
+  .step-section:last-child { border-bottom: none; }
   .step-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--blue);
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    margin-bottom: 16px;
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 13px; font-weight: 600; color: var(--blue);
+    text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 16px;
   }
-
   .step-num {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 24px;
-    height: 24px;
-    background: var(--blue);
-    color: var(--white);
-    border-radius: 50%;
-    font-size: 12px;
-    font-weight: 700;
-    font-family: 'DM Sans', sans-serif;
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 24px; height: 24px; background: var(--blue); color: var(--white);
+    border-radius: 50%; font-size: 12px; font-weight: 700; font-family: 'DM Sans', sans-serif;
   }
 
-  /* Name Selection */
-  .name-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+  .hospital-select {
+    width: 100%; max-width: 480px; padding: 12px 16px;
+    border: 2px solid var(--gray-200); border-radius: 8px;
+    font-size: 14px; font-family: 'Noto Sans KR', sans-serif;
+    color: var(--gray-800); background: var(--white); cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239ba3af' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 16px center;
+    transition: border-color 0.2s;
   }
+  .hospital-select:focus { outline: none; border-color: var(--blue); }
+  .hospital-select:hover { border-color: var(--blue); }
 
+  .name-grid { display: flex; flex-wrap: wrap; gap: 10px; }
   .name-btn {
-    padding: 10px 22px;
-    border: 2px solid var(--gray-200);
-    border-radius: 8px;
-    background: var(--white);
-    font-size: 14px;
-    font-weight: 500;
-    font-family: 'Noto Sans KR', sans-serif;
-    color: var(--gray-600);
-    cursor: pointer;
-    transition: all 0.2s ease;
+    padding: 10px 22px; border: 2px solid var(--gray-200); border-radius: 8px;
+    background: var(--white); font-size: 14px; font-weight: 500;
+    font-family: 'Noto Sans KR', sans-serif; color: var(--gray-600);
+    cursor: pointer; transition: all 0.2s ease;
   }
+  .name-btn:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-light); }
+  .name-btn.active { border-color: var(--blue); background: var(--blue); color: var(--white); box-shadow: 0 2px 8px rgba(26,109,212,0.25); }
+  .name-btn.active .role-tag { background: rgba(255,255,255,0.25); color: var(--white); }
 
-  .name-btn:hover {
-    border-color: var(--blue);
-    color: var(--blue);
-    background: var(--blue-light);
+  .role-tag {
+    display: inline-block; font-size: 11px; padding: 1px 6px;
+    border-radius: 4px; margin-left: 4px; font-weight: 500; vertical-align: middle;
   }
+  .role-tag.pi { background: #fef3c7; color: #92400e; }
+  .role-tag.si { background: #e0e7ff; color: #3730a3; }
+  .role-tag.crc { background: #d1fae5; color: #065f46; }
+  .role-tag.idm { background: #f3e8ff; color: #6b21a8; }
+  .role-tag.nurse { background: #ffe4e6; color: #9f1239; }
+  .role-tag.pa { background: #ffedd5; color: #9a3412; }
 
-  .name-btn.active {
-    border-color: var(--blue);
-    background: var(--blue);
-    color: var(--white);
-    box-shadow: 0 2px 8px rgba(26,109,212,0.25);
-  }
+  .hidden { display: none !important; }
 
-  /* Schedule Grid */
-  .grid-wrapper {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .grid-hint {
-    font-size: 13px;
-    color: var(--gray-400);
-    margin-bottom: 14px;
-  }
-
+  .grid-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .grid-hint { font-size: 13px; color: var(--gray-400); margin-bottom: 14px; }
   .grid-hint strong { color: var(--gray-600); }
 
-  table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 3px;
-    min-width: 720px;
-  }
-
+  table { width: 100%; border-collapse: separate; border-spacing: 3px; min-width: 720px; }
   thead th {
-    padding: 8px 4px;
-    text-align: center;
-    font-weight: 600;
-    color: var(--navy);
-    font-size: 13px;
-    position: sticky;
-    top: 0;
-    background: var(--white);
-    z-index: 2;
+    padding: 8px 4px; text-align: center; font-weight: 600;
+    color: var(--navy); font-size: 13px; position: sticky; top: 0;
+    background: var(--white); z-index: 2;
   }
-
-  thead th .th-date {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    display: block;
-    line-height: 1.2;
-  }
-
-  thead th .th-day {
-    font-size: 11px;
-    font-weight: 400;
-    color: var(--gray-400);
-  }
-
-  thead th:first-child {
-    width: 100px;
-    text-align: right;
-    padding-right: 10px;
-  }
-
+  thead th .th-date { font-family: 'DM Sans', sans-serif; font-size: 20px; font-weight: 700; display: block; line-height: 1.2; }
+  thead th .th-day { font-size: 11px; font-weight: 400; color: var(--gray-400); }
+  thead th:first-child { width: 100px; text-align: right; padding-right: 10px; }
   tbody td:first-child {
-    text-align: right;
-    padding-right: 10px;
-    font-size: 11.5px;
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 500;
-    color: var(--gray-400);
-    white-space: nowrap;
-    vertical-align: middle;
+    text-align: right; padding-right: 10px; font-size: 11.5px;
+    font-family: 'DM Sans', sans-serif; font-weight: 500;
+    color: var(--gray-400); white-space: nowrap; vertical-align: middle;
   }
-
-  tbody td {
-    padding: 0;
-  }
+  tbody td { padding: 0; }
 
   .cell {
-    height: 32px;
-    border-radius: 5px;
-    background: var(--gray-100);
-    border: 1.5px solid transparent;
-    cursor: pointer;
-    transition: all 0.12s ease;
-    position: relative;
+    height: 32px; border-radius: 5px; background: var(--gray-100);
+    border: 1.5px solid transparent; cursor: pointer;
+    transition: all 0.12s ease; position: relative;
   }
-
-  .cell:hover {
-    background: var(--blue-hover);
-    border-color: var(--blue);
-    transform: scale(1.06);
-    z-index: 1;
-  }
-
-  .cell.selected {
-    background: var(--blue-selected);
-    border-color: var(--blue-selected);
-    box-shadow: 0 2px 6px rgba(26,109,212,0.3);
-  }
-
+  .cell:hover { background: var(--blue-hover); border-color: var(--blue); transform: scale(1.06); z-index: 1; }
+  .cell.selected { background: var(--blue-selected); border-color: var(--blue-selected); box-shadow: 0 2px 6px rgba(26,109,212,0.3); }
   .cell.selected::after {
-    content: '✓';
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    color: var(--white);
-    font-size: 14px;
-    font-weight: 700;
+    content: '✓'; position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%); color: var(--white); font-size: 14px; font-weight: 700;
   }
 
-  .cell.disabled {
-    background: var(--white);
-    border: 1px dashed var(--gray-200);
-    cursor: default;
-    opacity: 0.4;
-  }
-
-  .cell.disabled:hover {
-    transform: none;
-    border-color: var(--gray-200);
-    background: var(--white);
-  }
-
-  /* Overlay when no name selected */
-  .grid-overlay {
-    position: relative;
-  }
-
+  .grid-overlay { position: relative; }
   .grid-overlay.locked::after {
-    content: '위에서 이름을 먼저 선택해 주세요';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(255,255,255,0.85);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--gray-400);
-    border-radius: var(--radius);
-    backdrop-filter: blur(2px);
-    z-index: 10;
+    content: '위에서 기관과 이름을 먼저 선택해 주세요';
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(255,255,255,0.85); display: flex;
+    align-items: center; justify-content: center;
+    font-size: 15px; font-weight: 500; color: var(--gray-400);
+    border-radius: var(--radius); backdrop-filter: blur(2px); z-index: 10;
   }
 
-  /* Actions */
-  .actions {
-    padding: 24px 40px 32px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    flex-wrap: wrap;
-  }
-
+  .actions { padding: 24px 40px 32px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
   .btn {
-    padding: 12px 32px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    border: none;
-    font-family: 'Noto Sans KR', sans-serif;
-    transition: all 0.2s ease;
+    padding: 12px 32px; border-radius: 8px; font-size: 14px; font-weight: 600;
+    cursor: pointer; border: none; font-family: 'Noto Sans KR', sans-serif; transition: all 0.2s ease;
   }
-
-  .btn:disabled {
-    opacity: 0.4;
-    cursor: not-allowed;
-  }
-
-  .btn-submit {
-    background: var(--green);
-    color: var(--white);
-    box-shadow: 0 2px 8px rgba(13,155,106,0.25);
-  }
-
-  .btn-submit:hover:not(:disabled) {
-    background: #0b8a5e;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(13,155,106,0.3);
-  }
-
-  .btn-reset {
-    background: var(--gray-100);
-    color: var(--gray-600);
-  }
-
+  .btn:disabled { opacity: 0.4; cursor: not-allowed; }
+  .btn-submit { background: var(--green); color: var(--white); box-shadow: 0 2px 8px rgba(13,155,106,0.25); }
+  .btn-submit:hover:not(:disabled) { background: #0b8a5e; transform: translateY(-1px); }
+  .btn-reset { background: var(--gray-100); color: var(--gray-600); }
   .btn-reset:hover { background: var(--gray-200); }
+  .selection-count { font-size: 13px; color: var(--gray-400); font-family: 'DM Sans', sans-serif; }
+  .selection-count strong { color: var(--blue); font-size: 18px; }
 
-  .selection-count {
-    font-size: 13px;
-    color: var(--gray-400);
-    font-family: 'DM Sans', sans-serif;
-  }
-
-  .selection-count strong {
-    color: var(--blue);
-    font-size: 18px;
-  }
-
-  /* Toast / Status */
   .toast {
-    position: fixed;
-    top: 24px;
-    right: 24px;
-    padding: 16px 24px;
-    border-radius: 10px;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--white);
-    z-index: 1000;
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
-    pointer-events: none;
-    max-width: 360px;
-    box-shadow: var(--shadow-lg);
+    position: fixed; top: 24px; right: 24px; padding: 16px 24px;
+    border-radius: 10px; font-size: 14px; font-weight: 500; color: var(--white);
+    z-index: 1000; opacity: 0; transform: translateY(-10px);
+    transition: all 0.3s ease; pointer-events: none; max-width: 360px; box-shadow: var(--shadow-lg);
   }
-
-  .toast.show {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
+  .toast.show { opacity: 1; transform: translateY(0); }
   .toast.success { background: var(--green); }
   .toast.error { background: #d63c3c; }
   .toast.info { background: var(--blue); }
 
-  /* Success screen */
-  .success-screen {
-    display: none;
-    text-align: center;
-    padding: 60px 40px;
-  }
-
+  .success-screen { display: none; text-align: center; padding: 60px 40px; }
   .success-screen .icon {
-    width: 72px;
-    height: 72px;
-    background: var(--green-light);
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 32px;
-    margin-bottom: 20px;
+    width: 72px; height: 72px; background: var(--green-light);
+    border-radius: 50%; display: inline-flex;
+    align-items: center; justify-content: center; font-size: 32px; margin-bottom: 20px;
   }
-
-  .success-screen h2 {
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--navy);
-    margin-bottom: 8px;
-  }
-
-  .success-screen p {
-    font-size: 14px;
-    color: var(--gray-600);
-    margin-bottom: 6px;
-  }
-
+  .success-screen h2 { font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+  .success-screen p { font-size: 14px; color: var(--gray-600); margin-bottom: 4px; }
   .success-screen .modify-link {
-    color: var(--blue);
-    cursor: pointer;
-    text-decoration: underline;
-    font-size: 13px;
-    margin-top: 20px;
-    display: inline-block;
+    color: var(--blue); cursor: pointer; text-decoration: underline;
+    font-size: 13px; margin-top: 20px; display: inline-block;
   }
 
-  /* Footer */
-  .footer {
-    text-align: center;
-    padding: 20px;
-    font-size: 11.5px;
-    color: var(--gray-400);
-  }
+  .footer { text-align: center; padding: 20px; font-size: 11.5px; color: var(--gray-400); }
 
-  /* Loading */
   .spinner {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    border: 2px solid rgba(255,255,255,0.3);
-    border-top-color: var(--white);
-    border-radius: 50%;
-    animation: spin 0.6s linear infinite;
-    margin-right: 8px;
-    vertical-align: middle;
+    display: inline-block; width: 16px; height: 16px;
+    border: 2px solid rgba(255,255,255,0.3); border-top-color: var(--white);
+    border-radius: 50%; animation: spin 0.6s linear infinite;
+    margin-right: 8px; vertical-align: middle;
   }
-
   @keyframes spin { to { transform: rotate(360deg); } }
 
   @media (max-width: 768px) {
@@ -468,13 +229,14 @@
     .header, .step-section, .actions { padding-left: 20px; padding-right: 20px; }
     .header h1 { font-size: 19px; }
     .name-btn { padding: 8px 16px; font-size: 13px; }
+    .hospital-select { max-width: 100%; }
   }
 </style>
 </head>
 <body>
 
-<!-- ⚠️ 아래 URL을 Google Apps Script 배포 URL로 교체하세요 -->
 <script>
+  // ⚠️ 아래 URL을 Google Apps Script 배포 URL로 교체하세요
   const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbywObRWf4LBF4MRtnVwVTkj5S2K4zyHmTWf-yRdPfuW6kmEPLlo9radc8sqVomaGzoP/exec';
 </script>
 
@@ -482,41 +244,42 @@
   <div class="header">
     <div class="header-badge">CLINICAL TRIAL</div>
     <h1>NNS-LEX-01 개시모임(SIV) 일정 조율</h1>
-    <div class="header-sub">서울아산병원 · 소요시간 약 1시간</div>
+    <div class="header-sub">소요시간 약 1시간</div>
   </div>
 
   <div class="card">
-    <!-- Step 1: Name -->
-    <div class="step-section">
-      <div class="step-label"><span class="step-num">1</span> 이름을 선택해 주세요</div>
+    <div class="step-section" id="stepHospital">
+      <div class="step-label"><span class="step-num">1</span> 기관을 선택해 주세요</div>
+      <select class="hospital-select" id="hospitalSelect" onchange="onHospitalChange()">
+        <option value="">— 기관 선택 —</option>
+      </select>
+    </div>
+
+    <div class="step-section hidden" id="stepName">
+      <div class="step-label"><span class="step-num">2</span> 이름을 선택해 주세요</div>
       <div class="name-grid" id="nameGrid"></div>
     </div>
 
-    <!-- Step 2: Schedule -->
-    <div class="step-section" id="scheduleSection">
-      <div class="step-label"><span class="step-num">2</span> 참석 가능한 시간대를 클릭해 주세요</div>
+    <div class="step-section" id="stepSchedule">
+      <div class="step-label"><span class="step-num">3</span> 참석 가능한 시간대를 클릭해 주세요</div>
       <p class="grid-hint">클릭하면 <strong>선택</strong>, 다시 클릭하면 <strong>해제</strong>됩니다. 가급적 가능한 모든 시간대를 선택해 주세요.</p>
       <div class="grid-overlay locked" id="gridOverlay">
         <div class="grid-wrapper">
-          <table id="scheduleTable">
-            <thead><tr><th>시간</th></tr></thead>
-            <tbody></tbody>
-          </table>
+          <table id="scheduleTable"><thead><tr><th>시간</th></tr></thead><tbody></tbody></table>
         </div>
       </div>
     </div>
 
-    <!-- Actions -->
     <div class="actions" id="actionsSection">
       <button class="btn btn-submit" id="submitBtn" disabled onclick="submitSelection()">제출하기</button>
       <button class="btn btn-reset" onclick="clearSelections()">초기화</button>
       <div class="selection-count"><strong id="countNum">0</strong>개 시간대 선택됨</div>
     </div>
 
-    <!-- Success -->
     <div class="success-screen" id="successScreen">
       <div class="icon">✅</div>
-      <h2 id="successName">장준영</h2>
+      <h2 id="successName"></h2>
+      <p id="successHospital"></p>
       <p>님의 가능 일정이 제출되었습니다.</p>
       <p id="successDetail" style="font-size:13px; color:#9ba3af; margin-top:4px;"></p>
       <span class="modify-link" onclick="goBack()">수정하기</span>
@@ -525,67 +288,197 @@
 
   <div class="footer">
     제안드린 일정이 모두 불가능하실 경우, 가능하신 일정을 자유롭게 회신 부탁드립니다.<br>
-    문의: 헬프트라이알 CRA 김효영
+    문의: 헬프트라이알 담당 CRA
   </div>
 </div>
 
 <div class="toast" id="toast"></div>
 
 <script>
-// ============================================
-// Configuration
-// ============================================
-const PARTICIPANTS = [
-  '장준영 교수',
-  '김효영 CRA',
-  '손홍석 CTM'
-  // 필요한 연구진 이름을 여기에 추가하세요
-  // '홍길동 연구간호사',
-  // '김철수 SC',
+const SITES = [
+  {
+    name: '계명대학교동산병원',
+    members: [
+      { name: '손성일 교수님', role: 'PI' },
+      { name: '홍정호 교수님', role: 'SI' },
+      { name: '오승태 교수님', role: 'SI' },
+      { name: '현나리 선생님', role: 'CRC' },
+      { name: '송승민 선생님', role: 'CRC' },
+    ]
+  },
+  {
+    name: '건국대학교병원',
+    members: [
+      { name: '김한영 교수님', role: 'PI' },
+      { name: '박정진 교수님', role: 'SI' },
+      { name: '구지윤 선생님', role: 'CRC' },
+    ]
+  },
+  {
+    name: '경북대학교병원',
+    members: [
+      { name: '황양하 교수님', role: 'PI' },
+      { name: '김용원 교수님', role: 'SI' },
+      { name: '최우찬 교수님', role: 'SI' },
+      { name: '조세희 선생님', role: 'CRC' },
+    ]
+  },
+  {
+    name: '고려대학교 안산병원',
+    members: [
+      { name: '정진만 교수님', role: 'PI' },
+      { name: '이상헌 교수님', role: 'SI' },
+      { name: '권경은 선생님', role: 'CRC' },
+    ]
+  },
+  {
+    name: '서울아산병원',
+    members: [
+      { name: '장준영 교수님', role: 'PI' },
+      { name: '권순억 교수님', role: 'SI' },
+      { name: '김범준 교수님', role: 'SI' },
+      { name: '양욱진 교수님', role: 'SI' },
+      { name: '정민경 선생님', role: 'CRC' },
+    ]
+  },
+  {
+    name: '영남대학교의료원',
+    members: [
+      { name: '이 준 교수님', role: 'PI' },
+      { name: '현지영 선생님', role: 'CRC' },
+      { name: '김정아 선생님', role: 'PA' },
+    ]
+  },
+  {
+    name: '울산대학교병원',
+    members: [
+      { name: '권지현 교수님', role: 'PI' },
+      { name: '곽미경 선생님', role: 'NURSE' },
+      { name: '강진실 선생님', role: 'CRC' },
+    ]
+  },
+  {
+    name: '인제대학교 부산백병원',
+    members: [
+      { name: '김응규 교수님', role: 'PI' },
+      { name: '장회주 선생님', role: 'CRC' },
+    ]
+  },
+  {
+    name: '인제대학교 일산백병원',
+    members: [
+      { name: '홍근식 교수님', role: 'PI' },
+      { name: '조용진 교수님', role: 'SI' },
+      { name: '박홍균 교수님', role: 'SI' },
+      { name: '이연주 선생님', role: 'CRC' },
+      { name: '이그린 선생님', role: 'CRC' },
+    ]
+  },
+  {
+    name: '전남대학교병원',
+    members: [
+      { name: '박만석 교수님', role: 'PI' },
+      { name: '김준태 교수님', role: 'SI' },
+      { name: '최강호 교수님', role: 'SI' },
+      { name: '김현수 교수님', role: 'SI' },
+      { name: '이학로 교수님', role: 'SI' },
+      { name: '김재명 교수님', role: 'SI' },
+      { name: '박윤아 선생님', role: 'CRC' },
+      { name: '최민지 선생님', role: 'CRC' },
+    ]
+  },
+  {
+    name: '전북대학교병원',
+    members: [
+      { name: '강현구 교수님', role: 'PI' },
+      { name: '김상연 교수님', role: 'SI' },
+      { name: '이수정 선생님', role: 'CRC' },
+    ]
+  },
+  {
+    name: '한림대학교 춘천성심병원',
+    members: [
+      { name: '김철호 교수님', role: 'PI' },
+      { name: '손종희 교수님', role: 'SI' },
+      { name: '이상화 교수님', role: 'SI' },
+      { name: '성주혜 교수님', role: 'SI' },
+      { name: '이정재 교수님', role: 'SI' },
+      { name: '이경진 선생님', role: 'CRC' },
+      { name: '김지율 선생님', role: 'CRC' },
+    ]
+  },
 ];
 
 const DAYS = [
-  { date: '3/24', day: '월' },
-  { date: '3/25', day: '화' },
-  { date: '3/26', day: '수' },
-  { date: '3/27', day: '목' },
-  { date: '3/28', day: '금' },
-  { date: '3/31', day: '월' },
-  { date: '4/1',  day: '화' },
-  { date: '4/2',  day: '수' },
-  { date: '4/3',  day: '목' },
-  { date: '4/4',  day: '금' },
+  { date: '3/24', day: '월' }, { date: '3/25', day: '화' },
+  { date: '3/26', day: '수' }, { date: '3/27', day: '목' },
+  { date: '3/28', day: '금' }, { date: '3/31', day: '월' },
+  { date: '4/1',  day: '화' }, { date: '4/2',  day: '수' },
+  { date: '4/3',  day: '목' }, { date: '4/4',  day: '금' },
 ];
 
 const TIMES = [
-  '10:00~11:00', '10:30~11:30',
-  '11:00~12:00', '11:30~12:30',
-  '12:00~13:00', '12:30~13:30',
-  '13:00~14:00', '13:30~14:30',
-  '14:00~15:00', '14:30~15:30',
-  '15:00~16:00', '15:30~16:30',
-  '16:00~17:00', '16:30~17:30',
-  '17:00~18:00'
+  '10:00~11:00','11:00~12:00','12:00~13:00',
+  '13:00~14:00','14:00~15:00','15:00~16:00',
+  '16:00~17:00','17:00~18:00'
 ];
 
-// ============================================
-// State
-// ============================================
+const ROLE_CSS = { 'PI':'pi','SI':'si','CRC':'crc','IDM':'idm','NURSE':'nurse','PA':'pa' };
+const ROLE_LABELS = { 'PI':'PI','SI':'SI','CRC':'CRC','IDM':'IDM','NURSE':'간호사','PA':'PA' };
+
+let selectedHospital = null;
 let selectedName = null;
+let selectedRole = null;
 let selectedSlots = new Set();
 
-// ============================================
-// Build UI
-// ============================================
-function buildNameButtons() {
-  const grid = document.getElementById('nameGrid');
-  PARTICIPANTS.forEach(name => {
+function buildHospitalSelect() {
+  const sel = document.getElementById('hospitalSelect');
+  SITES.forEach((site, i) => {
+    const opt = document.createElement('option');
+    opt.value = i;
+    opt.textContent = site.name;
+    sel.appendChild(opt);
+  });
+}
+
+function onHospitalChange() {
+  const idx = document.getElementById('hospitalSelect').value;
+  const nameSection = document.getElementById('stepName');
+  const nameGrid = document.getElementById('nameGrid');
+
+  selectedHospital = null; selectedName = null; selectedRole = null;
+  selectedSlots.clear();
+  document.querySelectorAll('.cell.selected').forEach(c => c.classList.remove('selected'));
+  updateCount(); updateSubmitState();
+  document.getElementById('gridOverlay').classList.add('locked');
+
+  if (idx === '') { nameSection.classList.add('hidden'); return; }
+
+  const site = SITES[idx];
+  selectedHospital = site.name;
+  nameGrid.innerHTML = '';
+
+  site.members.forEach(member => {
     const btn = document.createElement('button');
     btn.className = 'name-btn';
-    btn.textContent = name;
-    btn.onclick = () => selectName(name, btn);
-    grid.appendChild(btn);
+    const roleCss = ROLE_CSS[member.role] || 'crc';
+    const roleLabel = ROLE_LABELS[member.role] || member.role;
+    btn.innerHTML = `${member.name} <span class="role-tag ${roleCss}">${roleLabel}</span>`;
+    btn.onclick = () => selectName(member, btn);
+    nameGrid.appendChild(btn);
   });
+
+  nameSection.classList.remove('hidden');
+}
+
+function selectName(member, btn) {
+  selectedName = member.name;
+  selectedRole = member.role;
+  document.querySelectorAll('.name-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('gridOverlay').classList.remove('locked');
+  updateSubmitState();
+  showToast(`${selectedName} 선택됨. 아래에서 가능한 시간을 클릭해 주세요.`, 'info');
 }
 
 function buildTable() {
@@ -595,14 +488,12 @@ function buildTable() {
     th.innerHTML = `<span class="th-date">${d.date}</span><span class="th-day">(${d.day})</span>`;
     thead.appendChild(th);
   });
-
   const tbody = document.querySelector('#scheduleTable tbody');
   TIMES.forEach(time => {
     const tr = document.createElement('tr');
     const tdTime = document.createElement('td');
     tdTime.textContent = time;
     tr.appendChild(tdTime);
-
     DAYS.forEach(d => {
       const td = document.createElement('td');
       const key = `${d.date}(${d.day}) ${time}`;
@@ -613,71 +504,37 @@ function buildTable() {
       td.appendChild(cell);
       tr.appendChild(td);
     });
-
     tbody.appendChild(tr);
   });
 }
 
-// ============================================
-// Interactions
-// ============================================
-function selectName(name, btn) {
-  selectedName = name;
-  document.querySelectorAll('.name-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById('gridOverlay').classList.remove('locked');
-  updateSubmitState();
-  showToast(`${name} 선택됨. 아래에서 가능한 시간을 클릭해 주세요.`, 'info');
-}
-
 function toggleCell(cell, key) {
-  if (!selectedName) {
-    showToast('먼저 위에서 이름을 선택해 주세요.', 'error');
-    return;
-  }
-  if (cell.classList.contains('disabled')) return;
-
-  if (selectedSlots.has(key)) {
-    selectedSlots.delete(key);
-    cell.classList.remove('selected');
-  } else {
-    selectedSlots.add(key);
-    cell.classList.add('selected');
-  }
-  updateCount();
-  updateSubmitState();
+  if (!selectedName) { showToast('먼저 기관과 이름을 선택해 주세요.', 'error'); return; }
+  if (selectedSlots.has(key)) { selectedSlots.delete(key); cell.classList.remove('selected'); }
+  else { selectedSlots.add(key); cell.classList.add('selected'); }
+  updateCount(); updateSubmitState();
 }
 
 function clearSelections() {
   selectedSlots.clear();
   document.querySelectorAll('.cell.selected').forEach(c => c.classList.remove('selected'));
-  updateCount();
-  updateSubmitState();
+  updateCount(); updateSubmitState();
 }
 
-function updateCount() {
-  document.getElementById('countNum').textContent = selectedSlots.size;
-}
+function updateCount() { document.getElementById('countNum').textContent = selectedSlots.size; }
+function updateSubmitState() { document.getElementById('submitBtn').disabled = !(selectedName && selectedSlots.size > 0); }
 
-function updateSubmitState() {
-  document.getElementById('submitBtn').disabled = !(selectedName && selectedSlots.size > 0);
-}
-
-// ============================================
-// Submit to Google Sheets
-// ============================================
 async function submitSelection() {
   const btn = document.getElementById('submitBtn');
-  const originalText = btn.textContent;
   btn.innerHTML = '<span class="spinner"></span>제출 중...';
   btn.disabled = true;
 
   const sortedSlots = Array.from(selectedSlots).sort((a, b) => {
-    const [aDate, aTime] = [a.split(' ')[0], a.split(' ')[1]];
-    const [bDate, bTime] = [b.split(' ')[0], b.split(' ')[1]];
+    const aDate = a.split(') ')[0], bDate = b.split(') ')[0];
+    const aTime = a.split(') ')[1], bTime = b.split(') ')[1];
     if (aDate !== bDate) {
-      const [am, ad] = aDate.replace(/\(.*\)/, '').split('/').map(Number);
-      const [bm, bd] = bDate.replace(/\(.*\)/, '').split('/').map(Number);
+      const [am, ad] = aDate.replace('(','').split('/').map(Number);
+      const [bm, bd] = bDate.replace('(','').split('/').map(Number);
       return am !== bm ? am - bm : ad - bd;
     }
     return aTime.localeCompare(bTime);
@@ -685,51 +542,43 @@ async function submitSelection() {
 
   try {
     if (GOOGLE_SCRIPT_URL === 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
-      // Demo mode - show success without actually saving
       showSuccessScreen(sortedSlots);
       showToast('⚠️ 데모 모드: Google Script URL이 설정되지 않았습니다.', 'info');
       return;
     }
-
-    const response = await fetch(GOOGLE_SCRIPT_URL, {
-      method: 'POST',
-      mode: 'no-cors',
+    await fetch(GOOGLE_SCRIPT_URL, {
+      method: 'POST', mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        name: selectedName,
-        slots: sortedSlots
-      })
+      body: JSON.stringify({ hospital: selectedHospital, name: selectedName, role: selectedRole, slots: sortedSlots })
     });
-
     showSuccessScreen(sortedSlots);
     showToast('제출 완료! 감사합니다.', 'success');
-
   } catch (error) {
     console.error(error);
     showToast('제출 중 오류가 발생했습니다. 다시 시도해 주세요.', 'error');
-    btn.textContent = originalText;
-    btn.disabled = false;
+    btn.textContent = '제출하기'; btn.disabled = false;
   }
 }
 
 function showSuccessScreen(slots) {
-  document.querySelectorAll('.step-section').forEach(s => s.style.display = 'none');
+  document.getElementById('stepHospital').style.display = 'none';
+  document.getElementById('stepName').style.display = 'none';
+  document.getElementById('stepSchedule').style.display = 'none';
   document.getElementById('actionsSection').style.display = 'none';
-  const screen = document.getElementById('successScreen');
-  screen.style.display = 'block';
+  document.getElementById('successScreen').style.display = 'block';
   document.getElementById('successName').textContent = selectedName;
+  document.getElementById('successHospital').textContent = selectedHospital;
   document.getElementById('successDetail').textContent = `${slots.length}개 시간대가 제출되었습니다.`;
 }
 
 function goBack() {
-  document.querySelectorAll('.step-section').forEach(s => s.style.display = 'block');
+  document.getElementById('stepHospital').style.display = 'block';
+  document.getElementById('stepName').style.display = 'block';
+  document.getElementById('stepSchedule').style.display = 'block';
   document.getElementById('actionsSection').style.display = 'flex';
   document.getElementById('successScreen').style.display = 'none';
 }
 
-// ============================================
-// Toast
-// ============================================
 function showToast(message, type = 'info') {
   const toast = document.getElementById('toast');
   toast.textContent = message;
@@ -738,10 +587,7 @@ function showToast(message, type = 'info') {
   toast._timeout = setTimeout(() => toast.classList.remove('show'), 3000);
 }
 
-// ============================================
-// Init
-// ============================================
-buildNameButtons();
+buildHospitalSelect();
 buildTable();
 </script>
 </body>
